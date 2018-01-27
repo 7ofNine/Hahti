@@ -1,0 +1,734 @@
+<html>
+<head>
+	<!--
+	<link rel="stylesheet" type="text/css" media="all">
+	-->
+<style type="text/css">
+<!--
+/* General link formatting */
+
+UL#navi {
+ margin:0;
+ padding:0;
+ border:none;
+ text-decoration:none;
+ list-style:none;
+
+ width:13em;
+ float:left;
+}
+
+UL#navi A {
+ margin:0;
+ padding:0;
+ border:none;
+ text-decoration:none;
+ list-style:none;
+
+ margin-bottom:1px;
+ padding-left:10px;
+ color:#000;
+ background-color:#ccc;
+ font-weight:bold;
+ line-height:2.5em;
+ display:block;
+}
+
+
+UL#navi LI UL LI A {
+ margin:0;
+ padding:0;
+ border:none;
+ text-decoration:none;
+ list-style:none;
+
+ color:#fff;
+ background-color:#ddd;
+ color:#000;
+ padding-left:20px;
+ margin:0;
+}
+
+
+UL#navi LI:hover  UL {
+ margin:0;
+ padding:0;
+ border:none;
+ text-decoration:none;
+ list-style:none;
+ 
+ display:block;
+}
+
+
+#navi #k1 + A , 
+#navi #k2 + A , 
+#navi #k3 + A 
+{
+ background:url(right.png) no-repeat right center #aaa;    
+}
+
+#navi LI:hover #k1 + A , 
+#navi LI:hover #k2 + A , 
+#navi LI:hover #k3 + A 
+{
+ background:url(down.png) no-repeat right center #aaa;  
+ color:#000; 
+}
+
+ul#navi a:hover {
+ background:#a33;
+ color:#fff;
+ }
+ 
+/* General link formatting end */
+
+
+/* Knoten ausblenden */
+ 
+UL#knoten_1 ,
+UL#knoten_2 , 
+UL#knoten_3 
+{ 
+ display:none;
+}
+
+/* Knoten bei Bedarf einblenden */
+
+#seite1 UL#knoten_1 ,
+#seite2 UL#knoten_2 , 
+#seite3 UL#knoten_3 
+{
+ display:block;
+ background:#ddd;
+}
+
+/* Maske um die aktuellen Navipunkte zu verdecken */
+
+#navi span {
+ position:relative;
+ margin-bottom:-2.5em;
+ width:13em;
+ height:2.5em;
+ background:url(bg_span.gif) no-repeat right center transparent;    /* Benötigt der IE 6 + 7 */
+ z-index:1;
+ display:none;
+
+}
+
+
+
+#seite1 #k1 + A , 
+#seite2 #k2 + A , 
+#seite3 #k3 + A 
+{
+ background:url(down.png) no-repeat right center #aaa;  
+}
+
+/* Aktuellen Link hervorheben ( Optional ) */
+
+#home  LI  #navi-home + A , 
+
+.UP_1konten_1 #k1_1 + A , 
+.UP_2konten_1 #k1_2 + A , 
+.UP_3konten_1 #k1_3 + A , 
+.UP_4konten_1 #k1_4 + A ,
+
+.UP_1konten_2 #k2_1 + A , 
+.UP_2konten_2 #k2_2 + A , 
+.UP_3konten_2 #k2_3 + A , 
+.UP_4konten_2 #k2_4 + A ,
+
+.UP_1konten_3 #k3_1 + A ,
+.UP_2konten_3 #k3_2 + A ,
+.UP_3konten_3 #k3_3 + A ,
+.UP_4konten_3 #k3_4 + A  
+{
+ background-color:#09c;
+ color:#fff;
+}
+
+
+/* Aktuellen Link verdecken um ein erneutes Klicken zu verhindern */
+
+
+
+#home  #navi-home , 
+
+#seite1 #k1 , 
+#seite2 #k2 , 
+#seite3 #k3 , 
+
+.UP_1konten_1 #k1_1 , 
+.UP_2konten_1 #k1_2 , 
+.UP_3konten_1 #k1_3 , 
+.UP_4konten_1 #k1_4 ,
+
+.UP_1konten_2 #k2_1 , 
+.UP_2konten_2 #k2_2 , 
+.UP_3konten_2 #k2_3 , 
+.UP_4konten_2 #k2_4 ,
+
+.UP_1konten_3 #k3_1 ,
+.UP_2konten_3 #k3_2 ,
+.UP_3konten_3 #k3_3 ,
+.UP_4konten_3 #k3_4 
+{
+ display:block;
+}
+
+
+
+
+
+
+/* Sonderangaben für IE 6 und 7 */
+
+/* IE6 */
+
+* html * {
+ height:1%;
+}
+
+/* Weil der IE6 Folgeselektoren nicht versteht wird hier mit einer transparenten Grafik ( 400 x 100 Pixel ) der aktuelle Link markiert */ 
+
+* html #navi span {
+ background:url(arrowleft.gif) no-repeat right center transparent;    
+}
+
+
+* html #seite1 #k1 , 
+* html #seite2 #k2 , 
+* html #seite3 #k3 
+{
+ background:url(arrowdown.gif) no-repeat right center transparent;
+}
+
+/* IE7 */
+
+*+ html * {
+ zoom:1;
+}
+
+*+ html #navi span {
+ float:left;
+} 
+  
+
+ 
+ 
+
+
+html, body{
+
+    margin:0;
+    padding:8em;
+    margin-top: 1em;	
+}
+table           { border-spacing: 2px; }
+#content { 
+    overflow: scroll; 
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+}
+
+#header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 8em;
+  margin-top: 1em;
+}
+
+-->
+</style>
+</head>
+<body>
+
+<div class="shadowblockmenu-v" id='header'>
+<ul id="navi">
+	<li><a href="#hathi">Hathi Download Helper</a></li>
+	<li><a href="#quickstart">Quickstart</a></li>
+	<li><a href="#download">Download resources</a></li>
+	<li><a href="#gui">User interface</a>
+		<ul id="knoten_2">
+			<ul><li><a href="#menubar">Menu Bar</a></li>
+				<li><a href="#panels">Group Boxes</a></li>
+					<ul>
+						<li><a href="#info">Book information</a></li>
+						<li><a href="#download">Download settings</a></li>
+						<li><a href="#merge">PDF merge & conversion</a></li>
+					</ul>
+            </ul>
+		</ul>
+	</li>
+	<li><a href="#features">Features</a>
+		<ul id="knoten_3">
+			<ul>
+				<li><a href="#netproxy">Network proxy</a></li>
+				<li><a href="#autoproxy">AutoProxy</a></li>
+				<li><a href="#webproxies">WebProxy</a></li>
+				<li><a href="#folders">Folder structure</a></li>
+				<li><a href="#namespace">Namespace</a></li>
+				<li><a href="#pdfmerger">PDF merger</a></li>
+				<li><a href="#imageconversion">Image-to-PDF converter</a></li>
+            </ul>
+		</ul>
+	</li>	
+	<li><a href="#inst_pdftk">Installing pdftk</a></li>
+	<li><a href="#faq">FAQ</a></li>			
+	<li><a href="#error">Error Fixing</a></li>
+	<li><a href="#changelog">Change log</a></li>
+</ul>
+</div>
+
+
+<div id="content">
+<table>
+<tr><td colspan='2' ><h1><a name=hathi>Hathi Download Helper<a><img src='qrc:/images/elephant.png'/></h1></td></tr>
+<tr><td colspan='2'><p>Download books from the hathitrust website in a fast and easy manner.<br><br><br></p></td></tr>
+<tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </td></tr>
+
+	<tr><td colspan='2'><h2><a name=quickstart>Quickstart</a><h2></td></tr>
+	<tr><td colspan='2'><ol>
+				<li>Copy the book URL or book ID into the URL field of Hathi Download Helper and press the 'Get book info' button.</li>
+				<li>Select the source file format (pdf or images), set the destination folder and press the 'Start download' button.</li>
+				<li>Convert and merge the downloaded files to achieve a pdf book by pressing the 'create pdf' button.</li>
+   </ol></td></tr><tr><td colspan='2'><br></td></tr>  
+   <tr><td colspan='2'>Features: brief overview:<br>
+		<ol>
+			<li>Book information  : <b>Enable Proxy</b> to retrieve book information data via an internet proxy. Use <b>auto proxy</b> to automatically get connected to various updated proxy server.</li>
+			<li>Download of books : Use <b>auto proxy</b> feature to download data via various proxy server from either the US-only or from all countries available and to reduce waiting time.</li>
+			<li>Download of books : Use <b>web proxy</b> (disabled in HDH 1.1.1)feature to reduce waiting time.(Works only for 'public domain' titles.)</li>
+			<li>Link Collector    : Use <b>Link Collector</b> and <b>Batch Job</b> features to easily create batch jobs and download several books at once.</li>
+		</ol>
+	</td></tr><tr><td colspan='2'><br></td></tr> 
+   <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </td></tr>
+   	<tr><td colspan='2'><h2><a name=download>Download resources</a><h2></td></tr>
+	<tr><td colspan='2'>
+				Source code and installer are available on: <br><br>
+				WWW: &nbsp;<a href='https://sourceforge.net/projects/hathidownloadhelper/' target='_blank'>https://sourceforge.net/projects/hathidownloadhelper/</a><br>
+				WWW: &nbsp;<a href='http://www.facebook.com/hathidownloadhelperApp' >www.facebook.com/hathidownloadhelperApp</a><br>
+				WWW: &nbsp;<a href='http://www.softpedia.com/get/Internet/Download-Managers/Hathi-Download-Helper.shtml' target='_blank'>http://www.softpedia.com/get/Internet/Download-Managers/Hathi-Download-Helper.shtml</a><br><br>
+				Comments, feedback, bug reports and questions are welcome:<br> <a href='mailto:hathidownloadhelper@hotmail.com'>hathidownloadhelper@hotmail.com</a>  <br><br>
+				You can also use the build-in contact form. No email address required! (See: Help &rarr; Contact & Bug report)
+   </td></tr><tr><td colspan='2'><br></td></tr> 
+   <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </td></tr>
+   <tr><td colspan='2'><a name=gui><h2>User interface elements</a></h2></td>
+	<tr><td colspan='2'>The main window of Hathi Download Helper is separated into three group boxes. Each group box corresponds to a certain processing step:<br>
+		<ul>
+			<li>step 1: Identifying target book ID &rarr; Book information group box</li>
+			<li>step 2: Downloading book pages &rarr; Download settings group box</li>
+			<li>step 3: Converting downloaded data &rarr; PDF merge & conversion group box</li>
+		</ul>
+		Furthermore the menu bar provides additional features, namely:
+		<ul>
+			<li>Page setup</li>
+			<li>Gui setup (font setup, style setup)</li>
+			<li>User settings</li>
+			<li>Proxy settings</li>
+			<li>Batch job</li>
+			<li>Export links</li>
+			<li>Merge PDSs</li>
+			<li>Help</li>
+			<li>About</li>
+			<li>Contact and Bug report</li>
+			<li>Update check</li>
+			<li>Automatically check for update</li>
+		</ul>
+	</td></tr>
+	<tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </td></tr>
+	<tr><td colspan='2'><h3><a name=menubar>Menu Bar</a></h3></tr>
+	<tr><td colspan='2'>The menu bar provides the following options:</tr>
+	<tr><td colspan='2'>
+	<ul><table>
+	<tr ><td style='padding-left:20px; white-space:nowrap;'><li>File</td><td colspan='2' style='white-space:nowrap;'> &rarr; Exit</td><td style='padding-right:20px'> : </td><td> Exit Hathi Download Helper<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Options</td><td colspan='2' style='white-space:nowrap;'><a name=page> &rarr; Page Setup</a></td><td style='padding-right:20px'> : </td><td>Opens dialog for setting up page size (letter, A3, A4, etc.) and page margins (top,right, left, bottom)<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=style>Options</td><td style='white-space:nowrap;'> &rarr; GUI setup</td><td style='white-space:nowrap;'>&rarr;Style setup</a></td><td style='padding-right:20px'> : </td><td>Opens dialog for GUI style setup. Available styles depend on your operating system.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=font >Options</td><td style='white-space:nowrap;'> &rarr; GUI setup</td><td style='white-space:nowrap;'> &rarr;Font setup</a></td><td style='padding-right:20px'> : </td><td>Opens dialog for GUI font setup. You can adjust font type, size, etc. The size of the Gui will be adjusted to the required space for all elements.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=default>Options</td><td style='white-space:nowrap;'> &rarr; GUI setup</td><td style='white-space:nowrap;'> &rarr;Default</a></td><td style='padding-right:20px'> : </td><td>Resets font and GUI style to default settings.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Options</td><td colspan='2' style='white-space:nowrap;'><a name=usersettings> &rarr; User settings</a></td></td><td style='padding-right:20px'> : </td><td>Opens dialog for default application settings.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=proxy>Tools</td><td colspan='2'; style='white-space:nowrap;'> &rarr; Proxy</a></td><td style='padding-right:20px;'> : </td><td> Opens proxy server setup dialog. Here you can either activate the build-in AutoPorxy feature or set up your own proxy IP, port number and proxy type. For authentication user name and password may be entered. Otherwise just leave those fields empty.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=batch>Tools</td><td colspan='2' style='white-space:nowrap;'> &rarr; Create batch job</td><td style='padding-right:20px'> : </td><td> Opens batch job dialog. With this dialog you can create a list of books which should be downloaded one after the other.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=links>Tools</td><td colspan='2'style='white-space:nowrap;'> &rarr; Export links</td><td style='padding-right:20px'> : </td><td> Opens export dialog for creation of an html file containing links to each book page. You may like to use this feature to utilize your favorite download tool to download all book pages on your own.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li><a name=mergefiles>Tools</td><td colspan='2'style='white-space:nowrap;'> &rarr; Merge PDFs</td><td style='padding-right:20px'> : </td><td> Opens a file dialog to select arbitrary pdf files to be merged to a single pdf.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Help</td><td colspan='2' style='white-space:nowrap;'> &rarr; Help</td><td style='padding-right:20px'> : </td><td> Opens the help dialog you are currently reading.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Help</td><td colspan='2' style='white-space:nowrap;'> &rarr; About</td><td style='padding-right:20px'> : </td><td> Hathi Download Helper about dialog.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Help</td><td colspan='2' style='white-space:nowrap;'> &rarr; About Qt</td><td style='padding-right:20px'> : </td><td> About Qt dialog.<br><br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Help</td><td colspan='2' style='white-space:nowrap;'> &rarr; Check for Update</td><td style='padding-right:20px'> : </td><td> Checks if a new version is available online and provides download links for source code and installer.<br></li></td></tr>
+	<tr><td style='padding-left:20px; white-space:nowrap;'><li>Help</td><td colspan='2' style='white-space:nowrap;'> &rarr; Automatically check for Update</td><td style='padding-right:20px'> : </td><td> Enable / Disable automatic update check on start-up.<br></li></td></tr>
+	</ul></table>
+	</td></tr>
+	<tr><td><br></td></tr>
+	 <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </tr>
+	<tr><td colspan='2'><h3><a name=panels>Group Boxes<a></h3></tr>
+	 <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </tr>
+   <tr><td><fieldset><legend><b><a name=info>Book information</a></b></legend>
+	<table>
+		<tr><td><h4>Book URL: <input type='text'></h4></td></tr>
+		<tr><td><h4><input type='checkbox'>use proxy server</h4></td></tr>
+	</table></fieldset></td><td>The 'book information' group box holds the URL input field as well as the received book information: Title, number of pages, book ID, publisher and author.<br>After entering the book URL Hathi Download Helper reads the html document after pushing the 'get Book info' button.<br>
+	Alternatively the book ID can be entered also.
+	If desired a proxy server could be used by selecting the corresponding checkbox. When the book is blocked, e.g. due to copy right restrictions, a message saying "Received empty document..." will be displayed close to the progress bar.</td>
+   </td></tr><td><br><td></td><tr></tr>
+   <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </tr>
+   <tr><td><fieldset><legend><b><a name=download>Download settings</a></b></legend>
+	<table>
+		<tr><td><h4><input type='radio'>pdfs</h4></td></tr>
+		<tr><td><h4><input type='radio'>images</h4></td></tr>
+		<tr><td><h4><form>image zoom <select><option>200% ( 192 dpi)</option></select></form></h4></td></tr>
+		<tr><td><h4><input type='checkbox'>download OCR text</h4></td></tr>
+		<tr><td><h4>pages <input type='text'></h4></td></tr>
+		<tr><td><h4><input type='checkbox'>create pdf book after download</h4></td></tr>
+		<tr><td><h4><input type='checkbox'>resume book download</h4></td></tr>
+		<tr><td><h4><input type='checkbox'>enable AutoProxy</h4></td></tr>
+		<tr><td><h4><input type='checkbox'>enable WebProxies</h4></td></tr>
+	</table></fieldset></td>
+	<td><table>
+		<tr><td>In the 'Download settings' group box the user can choose between two file formats:<br>
+				<ul>
+				<li>pdfs : select this option to download the book pages as single searchable pdf documents generated by Hathitrust.org. After download you have the option to merge all pdf files. For this operation Hathi Download Helper is utilizing 'pdftk' (see: <a href='#pdfmerger'>PDF merge & conversion</a>). Note: The download of pdf files is limited to approximately 15 files/ 5 mins.</li>
+				<li>images: select this option to download the book pages as image files (jpeg, png). The image quality depends on the selected resolution. The amount of files which you can download without a waiting time is much faster compared to pdf download.</li>
+				</ul>
+				<ul type="square">
+				<li>The image quality can be adjusted by selecting a zoom factor. The listed dpi-values are approximations and depend on the selected page size.</li>
+				<li>To generate 'searchable' pdfs Hathi Download Helper has the option to download ocr text files in addition to the image files. The ocr text files will be stored as html documents on your hard disk.</li>
+				<li>Using the 'pages' input field the user can decide either to download a whole book or only certain pages. Single page numbers have to be separated by commas (e.g. 1,3,5). Page ranges have to be indicated by a hyphen, starting with the smaller value (e.g.: 5-10, 20-30).</li>
+				<li>Selecting the 'create pdf book after download' checkbox will automatically start the pdf merge and conversion process to generate pdf files or a single pdf book file.</li>
+				<li>When the 'resume book download' option is checked the Hathi Download Helper will check if there are already files of the specified book downloaded during a previous download session and if the files are readable. By default is option is not checked and the downloader will re-download all files.</li>
+				<li>The 'enable AutoProxy' checkbox will activate the built-in AutoProxy support of Hathi Download Helper. This feature will automatically establish connections to free proxy server to bypass the download limitations (e.g. for the pdf files) of hathitrust.org.</li>
+				<li>The 'enable WebProxies' checkbox will activate the build-in webproxy support of Hathi Download Helper. This feature will automatically generate download request via several webproxies to bypass the download limitations (e.g. for the pdf files) of hathitrust.org. Note: Only non-restricted books, which are accessible for non-us citizens, can be downloaded. See <a href='#webproxies'>WebProxies</a> for details.</li> 
+				</ul><br>				
+		</table></td></tr>
+   </td></tr><td><br><td></td>
+    <tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> </tr>
+   <tr><td><fieldset><legend><b><a name=merge>PDF merge & conversion</a></b></legend>
+   <table>
+		<tr><td><h4><input type='radio'>merge pdfs</h4></td>
+		<tr><td style='padding-right:20px'><h4><input type='radio'>convert & merge images to pdf book</h4></td>
+		<tr><td><h4><input type='radio'>convert images to single pdf files</h4></td>
+		<tr><td><h4><input type='checkbox'>use plaintext (ocr text) only</h4></td>
+		<tr><td><h4><form>set pdf resolution<select><option>200% ( 192 dpi)</option></select></form></h4></td></tr>
+	</table></fieldset></td>
+   </td><td>In the 'PDF merge & conversion' group box the user can choose between the following options:
+   <ul>
+		<li>'merge pdfs' : Merge single pdf files using the free tool 'pdftk' (http://www.pdflabs.com)</li>
+		<li>'convert & merge images to pdf book': Convert and merge images to a pdf book. <b>Page size</b> and <b>page margins</b> are editable via 'Options' &rarr; 'Page setup'</li>
+		<li>convert images to single pdf files: Create single pdf files for each page.</li>
+		<li>Sets the output resolution for pdf files generated by Hathi Download Helper from images/ocr text files.</li>
+	</ul></td>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"></tr>
+    <tr><td colspan='2'><h2><a name=features>Features</a><h2></td></tr>
+	<tr><td colspan='2'>This section holds some information about manual proxy, AutoProxy and WebProxy feature as well as the file naming and folder structure used by Hathi Download Helper. Furthermore, you will find some explanations about Hathi Download Helper as PDF merger and Image-to-PDF converter.</td></tr>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<tr><td colspan='2'><h3><a name=netproxy>Manual Proxy</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper provides an option to enable a network proxy. The proxy specification (IP- and port number, proxy type, user name and password) have to be defined by the user.<br>
+		The Hathi Download Helper will use this proxy server connection as long as the 'use proxy server' checkbox is selected.<br>
+		For implementation the QNetworkProxy class of Qt 4.7.4 is used:<br>
+		The following types are supported:<br><br> 
+		<table border='1'>
+		<tr><th>Proxy Type</th><th>Description</th><th>Default capabilities</th></tr>
+		<tr><td>Caching-only HTTP</td><td>Implemented using normal HTTP commands, it is useful only in the context of HTTP requests</td><td>CachingCapability, HostNameLookupCapability</td></tr>
+		<tr><td>SOCKS_5</td><td>Generic proxy for any kind of connection. Supports TCP, UDP, binding to a port (incoming connections) and authentication.</td><td>TunnelingCapability, ListeningCapability, UdpTunnelingCapability, HostNameLookupCapability</td></tr>
+		</table>
+		<br>On enabling the proxy connection Hathi Download Helper will check if a connection to the proxy server was established and if hathitrust.org is reachable.
+		<br>
+	</td></tr>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<tr><td colspan='2'><h3><a name=autoproxy>AutoProxy feature</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper provides an option to automatically connect to network proxies. For this purpose the downloader is utilizing proxy lists free available from the internet and will check if the given hathirust.org book url is reachable.<br>
+		Depending on the selected option (see: Tools&rarr;Proxy ) the AutoProxy feature will use either proxy servers from 'US only' or from 'all countries'.<br>
+		To use the AutoProxy feature to get information about a book you have to select the 'use proxy server' checkbox within the book information groupbox.<br>
+		To enable the AutoProxy feature for download select the 'enable AutoProxy' checkbox within the download settings groupbox.<br> 
+		<b>NOTE: Some books are only available when viewed in the US. For those books the 'US only' option has to be selected. Please note that you are only allowed to view these books when you are in the US.</b><br>  		
+		<br>Further information:<br> 
+		<ul style='list-style-type:disc'>
+		<table>
+		<tr><td><li>AutoProxy can be configured within the proxy setup dialog from the menu bar (select Tools&rarr;Proxy).</li></td></tr>
+		<tr><td><li>To activate AutoProxy select the corresponding radio button within proxy setup dialog.</li></td></tr>
+		<tr><td><li>AutoProxy can be configured to either use proxy server from the 'US only' or from 'all countries'.</li></td></tr>
+		<tr><td><li>Additional proxy sources might be added from inside the proxy preferences dialog.</li></td></tr>
+		<tr><td><li>When download limited of hathitrust.org for an active proxy connection has exceeded AutoProxy will automatically reconnect to another proxy server.</li></td></tr>
+		<tr><td><li><b>Please note: Establishing a new proxy connection might take several minutes!</b></li></td></tr>
+		</table>		
+	</td></tr>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"><br></tr>
+	<tr><td colspan='2'><h3><a name=webproxies>WebProxy - disabled in HDH 1.1.1</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper provides an option that utilizes a large amount of random web proxies to download data from hathitrust.org:<br>
+		This feature re-directs all download requests to free web proxy services to continue the download of data while the server download limitation for the user is activated. Please note the following information:<br> 
+		<br>
+		<b>Restrictions:</b><br>
+		&bull; Works only for non-restricted books which are also public domain when viewed outside the US.<br>
+		&bull; Strongly varying download speed.<br><br>
+		<b>Important advice:</b>
+		<br>&bull; Since this feature utilizes a large number of random web pages an updated virus scanner is recommended.<br>
+		&bull; There is no guarantee for proper functioning.
+	</td></tr>
+	<tr><td colspan='2'><br></td></tr>
+	<tr><td colspan='2'><h4><a name=webproxiessafety>WebProxy safety measurements</a></h4></tr>
+	<tr><td colspan='2'>
+	To minimize the risk of unwanted behaviour the following safety measurements are implemented:
+	<ul> 
+	<li>Java script is not allowed to open new windows or close existing windows.</li>
+	<li>Java is disabled.</li>
+	<li>Plug-ins in web pages are disabled.</li>
+	<li>Automatically load of images is disabled.</li>
+	<li>Automatically URL redirections are disabled.</li>
+	<li>Integrated pop-up blocker is enabled.</li>
+	<li>Monitoring of load requests for cross-site scripting attempts. Suspicious scripts are blocked.</li>
+	</ul>
+	</td></tr>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<tr><td colspan='2'><h3><a name=folders>File and folder structure</a></h3></tr>
+	<tr><td colspan='2'>
+		<br>Hathi Download Helper creates the following <b>sub-folder</b> structure for downloaded data inside the target directory:
+		<ul style='list-style-type:disc'>
+		<table>
+		<tr><td><li>'pdfs' </td><td style='padding-right:20px'>:</td><td>Folder for downloaded pdf files</li></td>
+		<tr><td><li>'images' </td><td style='padding-right:20px'>:</td><td>Folder for downloaded image files</li></td>
+		<tr><td><li>'ocr'  </td><td style='padding-right:20px'>:</td><td>Folder for downloaded ocr text files (*.hmtl)</li></td>
+		</table>
+		</ul>
+		<b>Note: All downloaded data (images, pdfs, ocr files) will be kept. If you don't need them any more you have to delete them manually.</b>
+		<br><br>
+		<b>Note: When restarting a download (with the same book ID to the same destination folder) all files downloaded in the previous session will be overwritten unless you have selected the 'resume book download options'. In that case the downloader will check if a corresponding file (with the same name) already exists and will not download this file again.</b>
+	</td></tr>
+	<tr><td colspan='2'>
+	<br>Hathi Download Helper creates the following <b>sub-folder</b> structure for converted data inside the source directory:
+		<ul style='list-style-type:disc'>
+			<table>
+			<tr><td><li>'pdfs' </td><td style='padding-right:20px'>:</td><td>Folder for generated pdf files. <b>Existing files will be overwritten.</b></li></td>
+			<tr><td><li>'pdfs_text_only' </td><td style='padding-right:20px'>:</td><td>Folder for generated pdfs files with ocr text only.</li></td>
+			</table>
+		</ul>
+	</td></tr>
+	<tr><td colspan='2'><b>Note: Since the target folder for download is the source folder for conversion all existing pdf files within the 'pdfs' folder will be overwriten when 'single pdf' conversion was selected as output option!<b></h3></tr>
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<!-- Namespace -->
+	<tr><td colspan='2'><h3><a name=namespace>Namespace</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper is using a fixed name structure for downloaded data, starting with the document ID (but with removed reserved characters).<br>
+		This namespace is used for pdf files, images and ocr text files (html-files).<br>Example for document ID: hvd.32044038439063:<br> 
+		<br>
+		<table >
+		<tr><td><b>File format</b></td><td style='padding-left:20px'><b>ID + "_page_" + page number + filetype extension</b></td></tr>
+		<tr><td colspan='3'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"></tr>
+		<tr><td>PDF example:</td><td style='padding-left:20px'> <b>hvd.32044038439063_page_001.pdf</b></td></tr>
+		<tr><td>JPG example:</td><td style='padding-left:20px'> <b>hvd.32044038439063_page_001.jpg</b></td></tr>
+		<tr><td>OCR example:</td><td style='padding-left:20px'> <b>hvd.32044038439063_page_001.html</b></td></tr>
+		</table>
+	</td></tr>
+	 <tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<!-- pdfmerger -->
+	<tr><td colspan='2'><h3><a name=pdfmerger>Hathi Download Helper as PDF merger</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper is able to merge any pdf files utilizing the 'pdftk' (pdf toolkit) application. For this purpose the radio button "merge pdfs" has to be selected. When selecting a folder without content downloaded by Hathi Download Helper (files/folders) a corresponding file dialog for file selection will apear. This dialog is also available from the menu bar (Tools &rarr; Merge PDFs). If you are running a linux or MAC OS system you have to install the 'pdftk' tool (http://www.pdflabs.com). For Windows systems Hathi Download Helper brings along a copy of 'pdftk'.
+	</td></tr>
+	 <tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+		<tr><td colspan='2'><h3><a name=imageconversion>Hathi Download Helper as Image-to-PDF converter</a></h3></tr>
+	<tr><td colspan='2'>
+		Hathi Download Helper is able to convert a number of different image formats into pdf files. For this purpose the radio button "convert & merge images to pdf book" or "convert images to single pdf files" has to be selected. When selecting a folder without content downloaded by Hathi Download Helper (files/folders) a corresponding file dialog for file selection will apear."
+	</td></tr>
+	<tr><td colspan='2'><b><br>Note: Since the target folder for download is the source folder for conversion all existing pdf files within the 'pdfs' folder will be overwriten when 'single pdf' conversion was selected as output option!<b></h3></tr>
+	<!--Installing pdftk-->
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+		<tr><td colspan='2'><h3><a name=inst_pdftk>Installing pdftk</a></h3></tr>
+		<table><ul>
+			<tr><td colspan='2'>For merging existing pdf files Hathi Download Helper is using the 'pdftk' application. To install pdftk you have to do the following actions in dependency of your OS:<br></td></tr>
+			<tr><td colspan='2'>
+			<!--Installing pdftk windows-->
+				<table>
+					<ul>
+						<tr>
+							<td><span style="white-space: nowrap;"><li>Windows</span></td>
+							<td style='padding-right:20px'>
+								<ol>
+									<li>Download and install 'pdftk' from http://www.pdflabs.com</li><li>Open the pdftk program folder and copy the files <b>pdftk.exe</b> and <b>libiconv2.dll</b></li><li>Open the Hathi Download Helper folder containing the hathidownloadhelper.exe file and create a new folder named <b>pdftk</b></li><li>Copy the files from step 2 into the pdftk subfolder.</li>
+								</ol>
+							</td></li>
+						</tr>
+						<tr><td colspan='2'><b>Hint: </b>If you have compiled Hathi Download Helper on your own you have to place the pdftk subfolder in your Debug/Release target folder containing the HathiDownloadHelper.exe file.</td></tr>
+					</ul>
+				</table>
+			</td></tr>
+			<tr><td colspan='2'>
+			<!--Installing pdftk linux-->
+				<table>
+					<ul>
+						<tr>
+							<td><span style="white-space: nowrap;"><li>Linux</span></td>
+							<td style='padding-right:20px'>
+								<ol>
+									<li>Download and install 'pdftk server' from http://www.pdflabs.com or use the pdftk file placed in the pdftk subfolder attached to this project.</li>
+									<ul><li>When you are using Ubuntu you can install pdftk by the following command:<br>sudo apt-get install pdftk</li></ul>
+								</ol>
+							</td></li>
+						</tr>
+					</ul>
+				</table>
+			</td></tr>
+			<tr><td colspan='2'>
+			<!--Installing pdftk Mac OS-->
+				<table>
+					<ul>
+						<tr>
+							<td><span style="white-space: nowrap;"><li>Mac OS</span></td>
+							<td style='padding-right:20px'>
+								<ol>
+									<li>Download and install 'pdftk server' for Mac OS from http://www.pdflabs.com.<br><b>Hint: </b>Due to 'gatekeeper' feature on Mac OS you have to open the installer via right-click on it. Then select 'Open'.</li>
+								</ol>
+							</td></li>
+						</tr>
+					</ul>
+				</table>
+			</td></tr>
+		</ul></table>
+	<!-- FAQ -->
+	<tr><td colspan='2'><br><br><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+		<tr><td colspan='2'><h3><a name=faq>FAQ</a></h3></tr>
+	<tr><td colspan='2'><br>
+		<table><ul style="list-style-type:disc">
+		<tr><td colspan='2'><li><a name=meaning><b>What does the name "Hathi Download Helper" mean?</b></a></td></tr>
+		<tr><td colspan='2'><b>Hathi</b> (pronounced hah-tee) is the Hindi word for elephant, an animal highly regarded for its capability to suck a huge amount of water into its trunk, and to blow the water into its mouth. In computer networks, to <b>download</b> means to receive data to a local system from a remote system, or to initiate such a data transfer. <b>Helper</b> refers to a device that helps. In combination, the words convey the key benefits users can expect from this application - to download pages or complete books in an easy way.</li></td></tr>
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br>
+		<table><ul style="disc">
+		<tr><td colspan='2'><li><a name=logo><b>HDH Logo</b></a></td></tr>
+			<tr><td colspan='2'>The Hathi Download Helper logo was originally created by 'lemming' and titled as 'Cartoon elephant'. It is under public domain. For further information visit: <a href='https://openclipart.org/detail/17810/cartoon-elephant'>https://openclipart.org/detail/17810/cartoon-elephant</a><br>			
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br><br>
+		<table><ul style="list-style-type:disc">
+		<tr><td colspan='2'><li><a name=timeout><b>Server: maximum download limit exceeded...please wait....</b></a></td></tr>
+			<tr><td colspan='2'>There is a download limitation for any files by Hathitrust.org. When downloading too many files in a short period of time you will be forced to wait for some time. In case of pdf-files the limitation is about 15 files/ 5 minutes. Afterwards you have to wait for appr. 5 minutes.	You may activate the WebProxy-Feature to download data via several webproxies during this queuing period.  		
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br><br>
+		<table><ul style="list-style-type:disc">
+		<tr><td colspan='2'><li><a name=ipblocked><b>Suddenly Hathitrust.org is not reachable anymore...</b></a></td></tr>
+			<tr><td colspan='2'>This behaviour may occur due to extensive download requests. In this case the user IP might be blocked by Hathitrust.org for apprx. 5 minutes.  	
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br><br>
+		<table><ul style="list-style-type:disc">
+		<tr><td colspan='2'><li><a name=pdfsize><b>Why are the created PDF files are so huge?</b></a></td></tr>
+			<tr><td colspan='2'>Hathi Download Helper uses a PDF-Printer (Qt::QPrinter), which 'prints' the images into the pdf file. Since QPrinter only supports jpg-image formats all pages are stored as jpg-images inside the pdf file. Therefore even pages with text only have to be stored in the same way like full resolution images. 		
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br><br>
+		<table><ul style="disc">
+		<tr><td colspan='2'><li><a name=searchablepdf><b>How does Hathi Download Helper generate searchable PDF files?</b></a></td></tr>
+		<tr><td colspan='2'><li><a name=searchablepdf><b>Is there any OCR software involved?</b></a></td></tr>
+			<tr><td colspan='2'>Hathi Download Helper does not have any OCR functionality. Instead it uses the OCR files generated by Hathitrust.org. The downloaded OCR files are stored as html files on your hard disk. For PDF creation the OCR text will be printed on each page overlayed by the corresponding images.<br><br>	
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><br><br>
+		<table><ul style="disc">
+		<tr><td colspan='2'><li><a name=proxyconnection><b>AutoProxy: Verifying connection always fails!</b></a></td></tr>
+			<tr><td colspan='2'>Hathi Download Helper is using free proxy servers whose IPs are published and updated online. Therefore the service of quality is strongly varying. Normally HDH requests up to 20 proxy IPs from 1 source. Sometimes a source only provides outdated IPs. HDH will request a new IP list after checking each of the previously received IP list. You can enforce an update of the IP list by re-freshing (uncheck, re-check) the 'use Proxy Server' checkbox.<br><br>
+								When the proxy verification still fails check if HDH is blocked by your firewall. An easy test is to run a manual update check: Menu bar &rarr; Help &rarr; check for update.<br>			
+		</li></td></tr>	
+		</ul></table>
+	</td></tr>
+	<tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<!-- ERROR FIXING -->
+	<tr><td colspan='2'><h3><a name=error><br><br>ERROR FIXING</a></h3></td></tr>
+	<tr>
+		<table><ul>
+			<tr><td colspan='2'><li><a name=errorpdftk><b>"Error: unable to execute 'pdftk' application."</b></a></td></tr>
+			<tr><td colspan='2'>For merging existing pdf files Hathi Download Helper is using the 'pdftk' application. This error may occur due to missing permissions for the pdftk files. To fix this error see <a href="#inst_pdftk">Installing pdftk</a><br></td></tr></li>
+			<tr><td colspan='2'><li><a name=errorpdftkfile><b>"Error: Waiting for 'pdftk' application."<br></b></a></td></tr>
+			<tr><td colspan='2'>For merging existing pdf files Hathi Download Helper is using the 'pdftk' application. This error may occur due to corrupted pdf-files. A warning dialog might name corrupted files. To fix this error you have to do the following actions:<br>
+				<table>
+					<ul>
+						<tr>
+							<td style='padding-right:20px'>
+								<ol>
+									<li>Delete the corrupted PDF file named in the warning dialog.</li>
+									<li>Restart the pdf merging process to check whether more corrupted files exist.</li>
+									<li>When all corrupted files have been deleted restart the download with activated 'resume book download' option.</li>
+									<br>Since version 
+								</ol>					
+							</td>
+						</tr>
+						<tr><td colspan='2'><b>Hint: </b>If you have compiled Hathi Download Helper on your own you have to place the pdftk subfolder in your Debug/Release target folder containing the HathiDownloadHelper.exe file.</td></tr>
+					</li></ul>
+				</table>
+			</td></tr>
+			
+			
+			<tr><td colspan='2'><li><a name=errorpdftk><b>Mac OS: Text in buttons and drop-downs looks misaligned</b></a></td></tr>
+			<tr><td colspan='2'>There are some problems with Qt framework on Mac OS X. Updating/changing application font should fix this problem. Select 'Options'&rarr;'Gui setupt'&rarr;'Font setup' from the menubar.<br></td></tr></li>
+			<tr><td colspan='2'><li><a name=errorpdftkfile><b>"Error: Waiting for 'pdftk' application."<br></b></a></td></tr>
+			<tr><td colspan='2'>For merging existing pdf files Hathi Download Helper is using the 'pdftk' application. This error may occur due to corrupted pdf-files. A warning dialog might name corrupted files. To fix this error you have to do the following actions:<br>
+				<table>
+					<ul>
+						<tr>
+							<td style='padding-right:20px'>
+								<ol>
+									<li>Delete the corrupted PDF file named in the warning dialog.</li>
+									<li>Restart the pdf merging process to check whether more corrupted files exist.</li>
+									<li>When all corrupted files have been deleted restart the download with activated 'resume book download' option.</li>
+									<br>Since version 
+								</ol>					
+							</td>
+						</tr>
+						<tr><td colspan='2'><b>Hint: </b>If you have compiled Hathi Download Helper on your own you have to place the pdftk subfolder in your Debug/Release target folder containing the HathiDownloadHelper.exe file.</td></tr>
+					</li></ul>
+				</table>
+			</td></tr>
+			
+			
+		</ul></table>
+	</tr>
+	<!-- Change log -->
+	<tr><td colspan='2'><hr style="BORDER-RIGHT: medium none; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; HEIGHT: 1px"> <br><br></tr>
+	<tr><td colspan='2'><h3><a name=changelog><br><br>Change log</a></h3></tr>
+		<table><tr><td>2013.05.18:</td><td>initial version 1.0.0</td></tr>
+			   <tr><td>2013.05.19:</td><td>version 1.0.1 released:</td></tr>
+			   <tr><td></td><td>fixed bug in image resolution setting after 'page setup' dialog, renamed images files in qt resources, copied image files in application directory</td></tr>
+			   <tr><td>2013.05.24:</td><td>version 1.0.2 released:</td></tr>
+			   <tr><td></td><td>changed development environment to 4.7.4, added compiler switch for qt 5.x, tested on linux and windows system, added options for GUI style and fonts, updated GUI, bug fix for missing ocr files, reduced freezing effect of GUI during pdf creation, added 'pdftk' binary for linux/OS, added selection for proxy type.</td></tr>
+			   <tr><td>2013.06.03:</td><td>version 1.0.3 released:</td></tr>
+			   <tr><td></td><td>bug fix for proxy type selection. moved pdf merge & conversion into QThread worker to eliminate freezing effect of GUI during processing. Changed usage from QPixmap to QImage for pdf creation. Changed OCR text extraction method to reduce memory usage(QWebkit is really greedy). Improved text font size adjustment method. Added Author and Publisher information. Changed Windows installer creation from QT framework installer to inno setup compiler to fix kernel32.dll error on win XP.</td></tr>
+			   <tr><td>2013.07.02:</td><td>version 1.0.4 released:</td></tr>
+			   <tr><td></td><td>improved download performance by using parallel download requests (it is really much faster now :-D ), added encryption for proxy password, added 'check for update' feature, added batch job feature for downloading several books at once, added link export function</td></tr>
+			   <tr><td>2013.08.18:</td><td>version 1.0.5 released:</td></tr>
+			   <tr><td></td><td>re-implementation of all GUI elements and dialogs, fixed text clipping of GUI elements, fixed page shrinking on pdf creation due to long ocr text, improved download speed, re-designed help file</td></tr>
+			   <tr><td>2013.10.27:</td><td>version 1.0.6 released:</td></tr>
+			   <tr><td></td><td>bug fixes: lost destination path for single pdf-file creation, application crash on manual file selection. Added new features for batch job dialog: 'edit book', 'load job', 'save job', added gimmicks for Halloween and Christmas, minor changes.</td></tr>
+			   <tr><td>2014.03.30:</td><td>version 1.0.7 released:</td></tr>
+			   <tr><td></td><td>added new download options: webproxies, resume of book downloads, added user settings dialog, added auto-update option, coding: separated GUI from file downloader. </td></tr>
+			   <tr><td>2014.05.06</td><td>version 1.0.8 released:</td></tr>
+			   <tr><td></td><td>adjustments due to changes in hathitrust.org link structure.</td></tr>
+			   <tr><td>2014.10.26</td><td>version 1.0.9 released:</td></tr>
+			   <tr><td></td><td>Updated GUI, added link collector feature, added history feature, added automatic proxy feature (including US proxies): 'AutoProxy', added verification check for proxy connections, improved pdf merging process, added field for copyright information, added check for corrupted pdf and image files, added automatic download resume in case of corrupted pdf files, minor bug fixes, changed development environment to 4.8.0 </td></tr>
+			   <tr><td>2014.11.30</td><td>version 1.1.0 released:</td></tr>
+			   <tr><td></td><td>bug fixes: fixed possible application crash on proxy activation, fixed PDFTK problems with too long file paths. Changes: disabled change-over from WebProxy to AutoProxy feature and vice versa during download, revised behaviour of various GUI controls to improve usability</td></tr>
+			   <tr><td>2015.03.08</td><td>version 1.1.1 alpha (unreleased):</td></tr>
+			   <tr><td></td><td>Changes: adjusted timing of AutoProxy feature, added option to preserve existing pdf books with identical name in same folder, adjustments for Mac OS compatibility.</td></tr>
+			   <tr><td>2016.05.19</td><td>version 1.1.1 released:</td></tr>
+			   <tr><td></td><td>Changes: adjustments to obtain SSL/TLS compatibility for https requests. (AutoProxy / WebProxy disabled)</td></tr>
+			   <tr><td>2016.06.07</td><td>version 1.1.2 released:</td></tr>
+			   <tr><td></td><td>Bug fixes: fixed and improved autoproxy feature. Changes: enabled rezie of GUI, added message / bug report feature.</td></tr>
+			   <tr><td>2016.09.05</td><td>version 1.1.3 released:</td></tr>
+			   <tr><td></td><td>Bug fixes: pdf merging fails when downloading book with more than 1300 pages, fixes automatic update check feature. New features: Download whole books as 1 pdf when whole book download is available, added Pdf merging dialog to merge arbitrary pdf files.</td></tr>
+			   <tr><td>2017.07.23</td><td>version 1.1.4 released:</td></tr>
+			   <tr><td></td><td>Bug fixes: Fixed connection problems to hathitrust webpage. Fixed broken feedback form.</td></tr>
+				<tr><td>2017.12.20</td><td>version 1.1.5 released:</td></tr>
+			   <tr><td></td><td>Bug fixes: Removed obsolete proxy sources. Improved auto proxy feature. Added SQL database. Added option to remove downloaded page data automatically.</td></tr>
+		<tr><td></td><td></td></tr>			   
+	<tr><td colspan='2'<br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td></tr>
+   </table>
+   </div>
+</body></html>

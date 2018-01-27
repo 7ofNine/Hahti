@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>elephant.png</file>
+        <file>elephant.ico</file>
+        <file>elephant_leeching.png</file>
+        <file>elephant_reading.gif</file>
+        <file>elephant_merging.gif</file>
+        <file>elephant_leeching.gif</file>
+        <file>elephant_merging_hlwn.gif</file>
+        <file>elephant_reading_hlwn.gif</file>
+        <file>elephant_leeching_hlwn.gif</file>
+        <file>elephant_reading_xms.gif</file>
+        <file>elephant_merging_xms.gif</file>
+        <file>elephant_leeching_xms.gif</file>
+    </qresource>
+    <qresource prefix="/html">
+        <file>help.html</file>
+    </qresource>
+</RCC>
